@@ -2,7 +2,7 @@ import logoSneakers from "@/assets/images/logo.svg";
 import AvatarImg from "@/assets/images/image-avatar.png";
 import MenuIcon from "@/components/icons/MenuIcon";
 import CartIcon from "@/components/icons/CartIcon";
-import CloseIcon from "../icons/CloseIcon";
+import CloseIcon from "@/components/icons/CloseIcon";
 import { useState } from "react";
 import NavLink from "@/components/header/NavLink";
 

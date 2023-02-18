@@ -1,5 +1,5 @@
-import MainProduct from "./components/MainProduct/MainProduct";
-import Header from "./components/header/Header";
+import MainProduct from "@/components/product/MainProduct";
+import Header from "@/components/header/Header";
 const App = () => {
   return (
     <>
