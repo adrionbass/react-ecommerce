@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="container mx-auto flex items-center gap- py-8">
+      <header className="container mx-auto flex items-center gap-8 p-8 md:p-0">
         <button className="md:hidden" onClick={handleOpenMenu}>
           <MenuIcon />
         </button>

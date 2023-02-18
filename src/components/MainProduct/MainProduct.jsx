@@ -1,5 +1,5 @@
-const MainProducts = () => { return(
-    <main>
+const MainProduct = () => { return(
+    <main className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <section>galeria ed imagenes</section>
         <section>
           <p>Sneaker Company</p>
@@ -26,4 +26,4 @@ const MainProducts = () => { return(
       </main>
 ) }
 
-export default MainProducts;
+export default MainProduct;
