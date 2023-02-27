@@ -12,31 +12,36 @@ import PrevIcon from "@/components/icons/PrevIcon";
 import NextIcon from "@/components/icons/NextIcon";
 import { useState } from "react";
 
-const ARRAY_IMGS = [imgProduct1, imgProduct2, imgProduct3, imgProduct4]
+const ARRAY_IMGS = [imgProduct1, imgProduct2, imgProduct3, imgProduct4];
 
 export default () => {
+  const [index, setIndex] = useState(0);
 
-    
-    const [index, setIndex] = useState(0);
+  const handleClickNext = () => {
+    index === ARRAY_IMGS.length - 1 ? setIndex(0) : setIndex(index + 1);
+  };
 
-    const handleClickNext = () => {
-        index === ARRAY_IMGS.length - 1 ? setIndex(0) : setIndex(index + 1);
-      };
-    
-      const handleClickPrev = () => {
-        index === 0 ? setIndex(ARRAY_IMGS.length - 1) : setIndex(index - 1);
-      };
-    
+  const handleClickPrev = () => {
+    index === 0 ? setIndex(ARRAY_IMGS.length - 1) : setIndex(index - 1);
+  };
+
   return (
-    <section className="grid md:grid-cols-4 md:gap-4">
+    <section className="relative grid md:grid-cols-4 md:gap-4">
+    {/* LA CLASSNAME "RELATIVE" DE ARRIBA EN TEORÍA NO DEBERÍA ESTAR. SI LA DE ABAJO, PERO NO FUNCIONA */}
       <div className="relative col-span-4">
-        <img src={ARRAY_IMGS[index]} alt="" className="aspect-[16/12]" />
+        <img src={ARRAY_IMGS[index]} alt="" className="aspect-[16/13] w-full" />
       </div>
       <div className="absolute top-1/2 left-0 flex w-full -translate-y-1/2 justify-between px-4">
-        <button className="grid h-10 w-10 place-items-center rounded-full bg-white" onClick={handleClickPrev} >
+        <button
+          className="grid h-10 w-10 place-items-center rounded-full bg-white"
+          onClick={handleClickPrev}
+        >
           <PrevIcon />
         </button>
-        <button className="grid h-10 w-10 place-items-center rounded-full bg-white" onClick={handleClickNext}>
+        <button
+          className="grid h-10 w-10 place-items-center rounded-full bg-white"
+          onClick={handleClickNext}
+        >
           <NextIcon />
         </button>
       </div>
