@@ -26,29 +26,29 @@ export default () => {
   };
 
   return (
-    <section className="relative grid md:grid-cols-4 md:gap-4">
-    {/* LA CLASSNAME "RELATIVE" DE ARRIBA EN TEORÍA NO DEBERÍA ESTAR. SI LA DE ABAJO, PERO NO FUNCIONA */}
+    <section className="grid md:grid-cols-4 md:gap-4">
       <div className="relative col-span-4">
-        <img src={ARRAY_IMGS[index]} alt="" className="aspect-[16/13] w-full" />
+        <img src={ARRAY_IMGS[index]} alt="" className="aspect-[16/13] w-full md:aspect-[16/18] md:rounded-md" />
+
+        <div className="absolute top-1/2 left-0 flex w-full -translate-y-1/2 justify-between px-4">
+          <button
+            className="grid h-10 w-10 place-items-center rounded-full bg-white"
+            onClick={handleClickPrev}
+          >
+            <PrevIcon />
+          </button>
+          <button
+            className="grid h-10 w-10 place-items-center rounded-full bg-white"
+            onClick={handleClickNext}
+          >
+            <NextIcon />
+          </button>
+        </div>
       </div>
-      <div className="absolute top-1/2 left-0 flex w-full -translate-y-1/2 justify-between px-4">
-        <button
-          className="grid h-10 w-10 place-items-center rounded-full bg-white"
-          onClick={handleClickPrev}
-        >
-          <PrevIcon />
-        </button>
-        <button
-          className="grid h-10 w-10 place-items-center rounded-full bg-white"
-          onClick={handleClickNext}
-        >
-          <NextIcon />
-        </button>
-      </div>
-      <img src={imgProduct1Small} alt="" className="hidden md:block" />
-      <img src={imgProduct2Small} alt="" className="hidden md:block" />
-      <img src={imgProduct3Small} alt="" className="hidden md:block" />
-      <img src={imgProduct4Small} alt="" className="hidden md:block" />
+      <img src={imgProduct1Small} alt="" className="hidden md:block md:rounded-md" />
+      <img src={imgProduct2Small} alt="" className="hidden md:block md:rounded-md" />
+      <img src={imgProduct3Small} alt="" className="hidden md:block md:rounded-md" />
+      <img src={imgProduct4Small} alt="" className="hidden md:block md:rounded-md" />
     </section>
   );
 };
